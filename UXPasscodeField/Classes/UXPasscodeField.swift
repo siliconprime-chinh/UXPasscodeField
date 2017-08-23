@@ -83,7 +83,7 @@ public class UXPasscodeField: UIControl, UIKeyInput {
     
     // MARK: - Private variables
     private var numberLabels: [UILabel] = []
-    private let emptyDigit = "–"
+    private let emptyDigit = ""//"–"
     private var isSecure = false {
         didSet {
             if isSecure != oldValue {
@@ -132,6 +132,8 @@ public class UXPasscodeField: UIControl, UIKeyInput {
         
         for _ in 0..<numberOfDigits {
             let numberLabel = UILabel()
+            numberLabel.layer.borderWidth = 1.0
+            numberLabel.layer.borderColor = UIColor.gray.cgColor
             numberLabel.text = emptyDigit
             numberLabel.textColor = dashColor
             numberLabel.textAlignment = .center
